@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+		.container{width:900px;margin:0 auto;}
+		.clearfix{zoom:1;}
+		.clearfix:after{content:'';display:block;height:0;visibility:hidden;clear:both;}
+		ul li{list-style:none;}
+		.nav{height:80px;line-height:80px;background:#000;color:#fff;}
+		.nav.navFix{position:fixed;top:0;left:50%;margin-left:-450px;}
+		.nav li{float:left;width:300px;}
+		.nav li.current{background:#fff;color:#000;}
+		.item{height:600px;border:1px solid #ccc;margin-bottom:30px;padding-top:20px;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div style="height:500px;">占坑</div>
+		
+		<div id="box">
+			<div class="nav" id="nav">
+				<ul class="clearfix">
+					<li data-id='x1'>11111111</li>
+					<li data-id='x2'>22222222</li>
+					<li data-id='x3'>33333333</li>
+				</ul>
+			</div>
+			<div class="item" id="x1">
+				11111111111
+			</div>
+			<div class="item" id="x2">
+				22222222222
+			</div>
+			<div class="item" id="x3">
+				333333333333
+			</div>
+		</div>
+		
+		<div style="height:1000px">底坑</div>
+	</div>
+		
+
+
+	<script src="http://file.easeeyes.com/js/jquery.min.js"></script>
+	<script src='scrollnav.js'></script>
+	<script>
+		$(window).load(function(){
+			scrollNav.init({
+				nid:'nav',
+				cid:'box',
+				ports:['x3','x1','x2']
+			})
+		})
+		
+	</script>
+</body>
+</html>
